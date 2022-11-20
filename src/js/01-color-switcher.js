@@ -13,6 +13,8 @@ const onStartBtnClick = () => {
   if (changeBgnColorBtnOn) {
     return;
   }
+  startBtn.disabled = true;
+  stopBtn.disabled = false;
   changeBgnColorBtnOn = true;
   itemID = setInterval(() => {
     bodyEl.style.backgroundColor = getRandomHexColor();
@@ -22,6 +24,8 @@ const onStartBtnClick = () => {
 const onStopBtnClick = () => {
   clearInterval(itemID);
   changeBgnColorBtnOn = false;
+  startBtn.disabled = false;
+  stopBtn.disabled = true;
 };
 
 startBtn.addEventListener('click', onStartBtnClick);
